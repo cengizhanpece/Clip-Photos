@@ -1,5 +1,5 @@
 # Clip Photos Inside The Given Folder
-This script clips the photos inside the folder with specified width and hight values
+This script clips the photos inside the folder with specified width and height values
 
 ## Installation
 Node.js must be installed in order to use this script.
