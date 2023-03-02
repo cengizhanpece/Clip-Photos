@@ -60,10 +60,10 @@ async function getImages(getImagesFrom){
     then writes that file as png image, this can alsa be changed to image/jpg
 */
 async function  cropImages (imageLocation){
+    
     let imageFiles = await getImages(imageLocation);
     imageFiles.forEach(async file=>{
        
-
         let image = await loadImage(imageLocation+"\\"+file)
         context.drawImage(image,0,0,width,height, 0, 0, width,height);
         let imageBuffer= canvas.toBuffer('image/png')
@@ -71,5 +71,18 @@ async function  cropImages (imageLocation){
         console.log(image);
     })
 }
-//Crops images and starts the script
-cropImages(getImagesFrom);
+
+
+if (process.argv.includes("--rename")){
+    //calling this function only to rename the files.
+    await getImages(getImagesFrom);
+    console.log("renamed");
+}
+else
+{
+    //Crops images and starts the script
+    await cropImages(getImagesFrom);
+    console.log("cropped");
+}
+
+

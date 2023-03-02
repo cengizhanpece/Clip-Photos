@@ -13,7 +13,13 @@ npm install
 After installation finished
 Open index.js file
 Then change the getImagesFrom and saveImageTo variables to your desired destination like "C://FolderName//Folder"
-Finally Use To Start Script
+node-canvas dependency has issues with reading files that contains special characters
+
+For prevent thi issue first rename the files by using
+```bash
+node index.js --rename
+```
+Then run script to crop images
 ```bash
 node index.js
 ```
