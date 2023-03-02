@@ -75,13 +75,13 @@ async function  cropImages (imageLocation){
 
 if (process.argv.includes("--rename")){
     //calling this function only to rename the files.
-    await getImages(getImagesFrom);
+    getImages(getImagesFrom);
     console.log("renamed");
 }
 else
 {
     //Crops images and starts the script
-    await cropImages(getImagesFrom);
+    cropImages(getImagesFrom);
     console.log("cropped");
 }
 
